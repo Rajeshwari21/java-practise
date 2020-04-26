@@ -79,8 +79,9 @@ public class LinkedList {
 	}
 	
 	// Print Reverse order.
-	// 12345
-	// 01234 - index
+	// listofData = 12345
+	// index      = 01234
+	// result = 5 4 3 2 1
 	public String reverseOrder() {
 		LinkedListNode currentNode = this.head;
 		ArrayList<Integer> listOfData = new ArrayList<Integer>();
@@ -93,5 +94,31 @@ public class LinkedList {
 			result = result + listOfData.get(i) + " "; 
 		}
 		return result;
+	}
+	
+	// Helper function to insert node at head, tail or any position.
+	// currentNode = 2 5 7 9;
+	public  boolean insertNodeAtPosition(int data, int positionToInsert) {
+		LinkedListNode newNode = new LinkedListNode(data);
+		LinkedListNode currentNode = this.head;
+		int index = 0;
+			if (positionToInsert == 0) {
+				newNode.next = this.head;
+				this.head = newNode;
+			    return true;
+			}
+			while(currentNode != null) {
+			if (index == positionToInsert-1) {
+				newNode.next = currentNode.next;
+				currentNode.next = newNode;
+				index++;
+				return true;
+			}
+			else {
+				currentNode = currentNode.next;
+				index++;
+			}
+		}
+		return false;
 	}
 }
