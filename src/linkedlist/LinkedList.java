@@ -1,3 +1,5 @@
+package linkedlist;
+
 import java.util.ArrayList;
 
 public class LinkedList {
@@ -49,6 +51,7 @@ public class LinkedList {
 		while (currentNode != null) {
 			if (index == positionToDelete-1) {
 				currentNode.next = currentNode.next.next;
+				index++;
 				return true;
 			}
 			else {
@@ -102,23 +105,26 @@ public class LinkedList {
 		LinkedListNode newNode = new LinkedListNode(data);
 		LinkedListNode currentNode = this.head;
 		int index = 0;
+		if (positionToInsert >=0) {
 			if (positionToInsert == 0) {
 				newNode.next = this.head;
 				this.head = newNode;
 			    return true;
 			}
 			while(currentNode != null) {
-			if (index == positionToInsert-1) {
-				newNode.next = currentNode.next;
-				currentNode.next = newNode;
-				index++;
-				return true;
-			}
-			else {
-				currentNode = currentNode.next;
-				index++;
+				if (index == positionToInsert-1) {
+					newNode.next = currentNode.next;
+					currentNode.next = newNode;
+					index++;
+					return true;
+				}
+				else {
+					currentNode = currentNode.next;
+					index++;
+				}
 			}
 		}
+		
 		return false;
 	}
 }

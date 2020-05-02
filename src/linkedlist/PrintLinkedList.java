@@ -1,3 +1,5 @@
+package linkedlist;
+
 import java.util.*;
 import java.io.*;
 public class PrintLinkedList {
