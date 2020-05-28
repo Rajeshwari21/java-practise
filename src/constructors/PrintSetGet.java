@@ -18,15 +18,13 @@ public class PrintSetGet {
 		// Settings and getting the titles.
 		List<String> titles1 = new ArrayList<>(Arrays.asList("Name", "Address", "Email", "Job"));
         printSetGet.setListTitles(titles1);
-        List<String> getTitles = printSetGet.getListTitles();
-        System.out.println("Titles are:" + getTitles);
+        System.out.println("Titles are:" + printSetGet.getListTitles());
 		        
 		// Setting and getting the scores.
 		ArrayList<Integer> scores = new ArrayList<>(Arrays.asList(5, 4, 3, 2, 1));
 		scores.add(6);
 		printSetGet.setScores(scores);
-		ArrayList<Integer> getScoreList = printSetGet.getScores();
-		System.out.println("Scores available:" + getScoreList);
+		System.out.println("Scores available:" + printSetGet.getScores());
 	}
 
 }
